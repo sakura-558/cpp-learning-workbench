@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="紫藤 C++ 编程学习助手：通过分析、提问与练习，帮助初学者真正理解代码。" />
+  <title>紫藤 · C++ 学习工作台</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#overview" data-route="overview" aria-label="返回学习总览">
+        <span class="brand-mark"><span></span></span>
+        <span class="brand-copy"><strong>紫藤</strong><small>C++ 学习工作台</small></span>
+      </a>
+      <div class="topbar-context"><span class="context-dot"></span><span>学生个人项目</span><b>/</b><span>本周学习第 7 天</span></div>
+      <div class="topbar-actions">
+        <button class="plain-icon" id="themeToggle" aria-label="切换明暗主题" title="切换主题">◐</button>
+        <button class="profile-button" id="profileButton" aria-label="修改昵称"><span id="profileInitial">学</span><i></i></button>
+      </div>
+    </header>
+
+    <div class="app-body">
+      <aside class="sidebar" aria-label="学习导航">
+        <div class="side-intro"><span class="side-kicker">MY STUDY DESK</span><strong>今天想先做什么？</strong><small>选一个入口，开始一段有方向的练习。</small></div>
+        <nav class="side-nav">
+          <button class="nav-item active" data-view="overview"><span class="nav-icon">⌂</span><span><b>学习总览</b><small>你的今日进度</small></span></button>
+          <button class="nav-item" data-view="solve"><span class="nav-icon">&lt;/&gt;</span><span><b>解题分析</b><small>代码 · 报错 · 对话</small></span></button>
+          <button class="nav-item" data-view="practice"><span class="nav-icon">✎</span><span><b>练习库</b><small>把理解变成手感</small></span></button>
+          <button class="nav-item" data-view="mistakes"><span class="nav-icon">▤</span><span><b>错题本</b><small>你的高频知识点</small></span></button>
+        </nav>
+        <div class="side-note"><span class="note-mark">“</span><p>不要急着找答案。<br />先说说你看到了什么。</p><small>— 紫藤学习原则</small></div>
+        <div class="side-footer"><span class="mini-avatar" id="sideInitial">学</span><span><b id="sideName">学习者</b><small>大一 · C++ 入门</small></span><button id="sideSettings" aria-label="学习设置">···</button></div>
+      </aside>
+
+      <main class="main-content" id="mainContent">
+        <section class="view active" id="view-overview" aria-labelledby="overviewTitle">
+          <div class="page-heading overview-heading">
+            <div><span class="page-eyebrow">TUESDAY · 10月27日</span><h1 id="overviewTitle">下午好，学习者。</h1><p>今天继续练习“读懂代码”，先从一个小问题开始。</p></div>
+            <button class="primary-action" data-go="solve"><span>开始解题</span><b>→</b></button>
+          </div>
+          <div class="overview-grid">
+            <article class="focus-card">
+              <div class="focus-top"><span class="eyebrow-chip">TODAY'S FOCUS</span><span class="focus-time">预计 15 分钟</span></div>
+              <div class="focus-body"><div><h2>看懂 <code>count++</code> 发生了什么</h2><p>一次后置递增的小练习，带你分清“先使用，还是先加一”。</p><button class="text-link" data-go="practice">继续上次练习 <span>→</span></button></div><div class="focus-illustration" aria-hidden="true"><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><span class="focus-number">02</span><span class="focus-label">STEP<br />BY STEP</span></div></div>
+              <div class="focus-progress"><span>本次学习进度</span><div><i style="width:38%"></i></div><b>1 / 3</b></div>
+            </article>
+            <article class="stat-card"><div class="stat-head"><span>学习状态</span><button class="more-button" id="statsMore">···</button></div><div class="streak"><strong>7</strong><span>天</span><em>连续学习</em></div><div class="week-bars" aria-label="本周学习记录"><i class="muted"></i><i class="active"></i><i class="active"></i><i class="active"></i><i class="active"></i><i class="active"></i><i></i></div><div class="week-labels"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div><p class="stat-foot">比上周多学习 <b>2 天</b></p></article>
+          </div>
+          <div class="section-bar"><div><span class="section-number">01</span><h2>快速入口</h2></div><span>从一个具体动作开始，不在菜单里迷路</span></div>
+          <div class="quick-grid">
+            <button class="quick-card quick-solve" data-go="solve"><span class="quick-icon">&lt;/&gt;</span><span><b>分析一段代码</b><small>预测输出、拆解执行过程</small></span><i>→</i></button>
+            <button class="quick-card quick-problem" data-go="solve" data-mode="problem"><span class="quick-icon">▧</span><span><b>解一道图片题</b><small>上传题目、整理解题思路</small></span><i>→</i></button>
+            <button class="quick-card quick-error" data-go="solve" data-mode="error"><span class="quick-icon">!</span><span><b>我遇到编译报错</b><small>粘贴错误，和 AI 一起定位</small></span><i>→</i></button>
+            <button class="quick-card quick-practice" data-go="practice"><span class="quick-icon">✎</span><span><b>做一道小练习</b><small>后置递增 · 变量类型</small></span><i>→</i></button>
+          </div>
+          <div class="section-bar recent-bar"><div><span class="section-number">02</span><h2>最近学习</h2></div><button class="text-link" data-go="mistakes">查看全部记录 <span>→</span></button></div>
+          <div class="recent-list">
+            <button class="recent-item" data-go="solve"><span class="recent-type type-code">代码理解</span><span class="recent-main"><b>后置递增：count++</b><small>你问过：为什么输出是 3 4？</small></span><span class="recent-time">今天 16:42</span><span class="recent-arrow">→</span></button>
+            <button class="recent-item" data-go="solve" data-mode="error"><span class="recent-type type-error">报错解析</span><span class="recent-main"><b>expected ';' before 'cout'</b><small>已掌握：语句末尾的分号</small></span><span class="recent-time">昨天 20:10</span><span class="recent-arrow">→</span></button>
+          </div>
+        </section>
+
+        <section class="view" id="view-solve" aria-labelledby="solveTitle">
+          <div class="page-heading compact-heading"><div><span class="page-eyebrow">LEARN BY EXPLAINING</span><h1 id="solveTitle">解题分析</h1><p>把代码、题目和思路放在一起，和 AI 一步一步走。</p></div><div class="mode-switch" role="tablist"><button class="mode-tab active" data-solve-mode="understand">理解代码</button><button class="mode-tab" data-solve-mode="problem">图片解题</button><button class="mode-tab" data-solve-mode="error">解析报错</button></div></div>
+          <div class="solve-layout">
+            <section class="code-workbench panel">
+              <div class="panel-header"><div><span class="panel-kicker">YOUR CODE / QUESTION</span><h2 id="workbenchTitle">先放入想研究的代码</h2></div><div class="file-actions"><button id="clearCode">清空</button><button id="uploadButton">上传题目图片</button><input type="file" id="imageUpload" accept="image/*" hidden /></div></div>
+              <div class="image-intake hidden" id="imageIntake"><div class="image-preview-wrap"><span class="image-placeholder" id="imagePlaceholder">上传题目图片<br /><small>PNG / JPG · 也可只粘贴题目文字</small></span><img id="questionPreview" alt="已上传的题目图片预览" /><button id="removeImage" aria-label="移除图片">移除图片</button></div><div class="image-intake-fields"><label for="questionText">题目文字 / 你想问的问题</label><textarea id="questionText" rows="4" placeholder="图片已显示在左侧。请把题目文字粘贴或补充到这里，方便 Demo 根据题意给出解题思路。"></textarea><div class="image-intake-actions"><select id="answerStyle" aria-label="选择讲解方式"><option value="guide">先给提示，引导我自己做</option><option value="explain">讲解完整解题思路</option><option value="plan">分析算法与复杂度</option></select><button id="solveImageButton">分析这道题 →</button></div><small class="capability-note">此 Demo 不含 OCR / 云端 AI：图片只做预览，题目文字需要手动补充；分析为前端演示逻辑。</small></div></div>
+              <div class="file-tab"><span class="file-dot"></span><b>main.cpp</b><small>C++17</small><i></i></div>
+              <div class="code-editor"><pre class="line-numbers" id="lineNumbers">1
+2
+3
+4
+5
+6
+7
+8</pre><textarea id="codeInput" spellcheck="false" aria-label="C++ 代码编辑区">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int count = 3;
+    cout &lt;&lt; count++ &lt;&lt; " " &lt;&lt; count;
+    return 0;
+}</textarea></div>
+              <div class="code-toolbar"><span><i class="status-dot"></i>代码已就绪</span><button id="simulateButton">▶ 模拟运行</button><button class="analyze-button" id="analyzeButton">让 AI 带我分析 <b>→</b></button></div>
+              <div class="run-output hidden" id="runOutput"><div><span>PROGRAM OUTPUT</span><small>模拟运行 · 无需编译器</small></div><code id="outputValue">3 4</code><p>这是运行结果，不是答案解释。右侧会带你理解它为什么是这样。</p></div>
+              <div class="code-tip"><span class="tip-badge">TIP</span><p>你可以直接问：<button class="inline-prompt" data-prompt="请用很慢的步骤解释这段代码">“请慢一点解释”</button> 或 <button class="inline-prompt" data-prompt="我猜输出是 4 4，对吗？">“我猜输出是 4 4”</button></p></div>
+            </section>
+            <section class="ai-workbench panel" aria-label="AI 引导对话">
+              <div class="ai-header"><div class="ai-avatar">✦</div><div><span class="panel-kicker">紫藤 AI 导师</span><h2>一起把思路说清楚</h2><span class="ai-status"><i></i>引导式对话演示</span></div><button class="level-toggle" id="levelToggle">入门讲解⌄</button><button class="more-button" id="newChat">＋ 新对话</button></div>
+              <div class="chat-body" id="chatBody">
+                <div class="chat-row ai-row"><div class="chat-avatar">✦</div><div class="chat-bubble"><p>嗨，我在这里。我们先不急着看答案。</p><p>你看到这段代码时，<strong>第一眼觉得哪一行最值得停下来？</strong></p><div class="chat-actions"><button class="suggestion" data-prompt="我不知道从哪一行开始">我不知道从哪开始</button><button class="suggestion" data-prompt="我想先预测输出">我先猜输出</button></div><time>刚刚</time></div></div>
+              </div>
+              <div class="analysis-drawer hidden" id="analysisDrawer"><div class="drawer-title"><span class="success-dot">✓</span><div><b>我先发现了一个关键点</b><small>建议从第 6 行开始看</small></div><span class="confidence">理解度 86%</span></div><div class="step-list"><div class="step-item current"><span>1</span><p><b>先取值</b><small><code>count++</code> 在输出时先拿到旧值 3</small></p></div><div class="step-item"><span>2</span><p><b>再变化</b><small>输出完成后，count 才变成 4</small></p></div></div><button class="drawer-question" data-prompt="所以 count++ 和 ++count 有什么区别？">继续追问这个区别 <b>→</b></button></div>
+              <form class="chat-compose" id="chatForm"><textarea id="chatInput" rows="1" placeholder="写下你的猜测，或问我一个问题…" aria-label="发送给 AI 的问题"></textarea><button type="submit" aria-label="发送">↑</button></form>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" id="view-practice" aria-labelledby="practiceTitle">
+          <div class="page-heading compact-heading"><div><span class="page-eyebrow">PRACTICE LIBRARY</span><h1 id="practiceTitle">练习库</h1><p>不是刷题数量，而是把每个小概念真正用出来。</p></div><div class="practice-filter"><button class="filter-button active">全部</button><button class="filter-button">变量</button><button class="filter-button">运算符</button></div></div>
+          <div class="practice-layout"><aside class="practice-list panel"><div class="list-head"><b>入门路径</b><span>4 / 8 已完成</span></div><div class="path-progress"><i style="width:50%"></i></div><button class="practice-list-item active" data-exercise="postfix"><span class="exercise-state">02</span><span><b>后置递增的顺序</b><small>运算符 · 预计 8 分钟</small></span><i>正在做</i></button><button class="practice-list-item" data-exercise="type"><span class="exercise-state">03</span><span><b>变量类型会影响什么</b><small>变量 · 预计 10 分钟</small></span><i>未开始</i></button><button class="practice-list-item" data-exercise="loop"><span class="exercise-state">04</span><span><b>循环中的计数器</b><small>循环 · 预计 12 分钟</small></span><i>未开始</i></button></aside><article class="exercise-panel panel" id="exercisePanel"><div class="exercise-top"><span class="eyebrow-chip">练习 02 · 运算符</span><span>难度 <b class="difficulty">入门</b></span></div><h2>下面的代码会输出什么？</h2><p class="exercise-desc">先不要运行。请把每一行执行后的 <code>count</code> 值写在脑中，再选择你认为会出现的结果。</p><pre class="exercise-code"><span class="code-keyword">int</span> count = <span class="code-number">3</span>;
+cout &lt;&lt; count++ &lt;&lt; <span class="code-string">" "</span> &lt;&lt; count;</pre><div class="answer-grid"><button data-answer="3 4">A <b>3 4</b><small>先输出旧值</small></button><button data-answer="4 4">B <b>4 4</b><small>先加一再输出</small></button><button data-answer="4 3">C <b>4 3</b><small>输出顺序相反</small></button></div><div class="exercise-feedback" id="exerciseFeedback"><span class="feedback-icon">?</span><p>选一个答案，我会根据你的选择追问，而不是马上公布结论。</p></div><div class="exercise-footer"><button class="text-link" data-go="solve" data-prompt="我做完了练习，想把后置递增讲给我听">让 AI 复盘这道题 <span>→</span></button><button class="save-exercise" id="saveExercise">收藏这道题</button></div></article></div>
+        </section>
+
+        <section class="view" id="view-mistakes" aria-labelledby="mistakesTitle">
+          <div class="page-heading compact-heading"><div><span class="page-eyebrow">YOUR LEARNING MEMORY</span><h1 id="mistakesTitle">错题本</h1><p>把重复出现的卡点留下来，下次遇到时就有路可走。</p></div><button class="outline-action" id="exportRecord">导出学习记录</button></div>
+          <div class="mistake-stats"><article class="mini-stat"><span>累计记录</span><b id="recordCount">3</b><small>个知识点</small></article><article class="mini-stat"><span>本周复习</span><b>6</b><small>次</small></article><article class="mini-stat"><span>已掌握</span><b>12</b><small>个概念</small></article><article class="memory-note"><span class="note-mark">“</span><p>你最近最常卡住的是<br /><b>“语句结束与执行顺序”</b></p><button class="text-link" data-go="practice">去复习 <span>→</span></button></article></div>
+          <div class="mistake-grid"><section class="topic-panel panel"><div class="panel-header"><div><span class="panel-kicker">TOPIC MAP</span><h2>高频知识点</h2></div><button class="more-button">近 30 天⌄</button></div><div class="topic-row"><div class="topic-label"><span class="topic-dot purple"></span><span><b>语法与标点</b><small>分号 · 括号 · 引号</small></span></div><div class="topic-bar"><i style="width:82%"></i></div><b>8</b></div><div class="topic-row"><div class="topic-label"><span class="topic-dot pink"></span><span><b>变量与类型</b><small>声明 · 赋值 · 类型转换</small></span></div><div class="topic-bar"><i style="width:58%"></i></div><b>5</b></div><div class="topic-row"><div class="topic-label"><span class="topic-dot gold"></span><span><b>执行顺序</b><small>后置递增 · 表达式</small></span></div><div class="topic-bar"><i style="width:43%"></i></div><b>4</b></div><div class="topic-row"><div class="topic-label"><span class="topic-dot blue"></span><span><b>循环与条件</b><small>for · while · if</small></span></div><div class="topic-bar"><i style="width:31%"></i></div><b>3</b></div></section><section class="timeline-panel panel"><div class="panel-header"><div><span class="panel-kicker">RECENT REVIEW</span><h2>最近复习</h2></div><button class="more-button">筛选⌄</button></div><div class="timeline-item"><span class="timeline-line"></span><span class="timeline-dot"></span><div><small>今天 16:42 · 代码理解</small><b>后置递增：count++</b><p>你已经能解释“先使用旧值，再完成加一”。</p></div></div><div class="timeline-item"><span class="timeline-line"></span><span class="timeline-dot"></span><div><small>昨天 20:10 · 报错解析</small><b>expected ';' before 'cout'</b><p>建议再写一个包含两条语句的小练习。</p></div></div><div class="timeline-item"><span class="timeline-dot"></span><div><small>10月25日 · 变量类型</small><b>int 与 double</b><p>还没有复习，安排在明天。</p></div></div></section></div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <dialog class="profile-dialog" id="profileDialog"><form method="dialog" id="profileForm"><div class="dialog-heading"><div><span class="panel-kicker">YOUR STUDY PROFILE</span><h2>设置学习昵称</h2></div><button class="dialog-close" value="cancel" aria-label="关闭">×</button></div><label for="nicknameInput">页面上显示的称呼</label><input id="nicknameInput" maxlength="16" placeholder="例如：小林" /><p>昵称只保存在当前浏览器，可以随时修改。</p><div class="dialog-actions"><button class="cancel-button" value="cancel">取消</button><button class="save-button" id="saveNickname" value="save">保存昵称</button></div></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
